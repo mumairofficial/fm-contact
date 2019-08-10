@@ -1,0 +1,34 @@
+The project requirements:
+
+The user should be able to add the contact information where:
+- name - is required
+- email - is required
+- phone - optional
+User should be able to favorite the contact.
+User should be able to see the list of all contacts and list of favorite contacts
+In the contacts list, the user should be able to toggle "favorite" on and off. If the contact was unfavorited, it should disappear from the list of favorite contacts.
+You should be able to modify existing contact.
+Tech stack:
+
+  You can use the language of your choice.
+  You can use the framework of your choice.
+  You can use any libraries of your choice.
+
+Things which we will care about are:
+
+  The source code quality. It should be well formatted and easy to review
+  The UI. The application should look nice (subjectively) and easy to use. Ideally mobile friendly.
+  The form validation
+  Commits quality - Commits titles should following angular commit conventions. And each logical task should be separate commit. 
+  Configured linter would be welcome but not required
+  Some unit tests are welcome but not required
+  We expect you to finish the test assignment in one week but let us know if you want more time due to your availability.
+
+Please, create GitHub or GitLab repository and share it with us once you are done with the assignment.
+
+
+---
+
+1. By commits quality we assume that you separate task by relevant commits with proper comments but not a for example single commit with everything​ in it.
+
+2. It is up to you but browser api would be enough. Please, provide README file with project details and steps required to install it.
