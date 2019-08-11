@@ -4,15 +4,15 @@ Contacts appliction with functionality to create, and mark favorite contact.
 
 This application is generated using Angular CLI versino 8.2.1
 
-> ## Project Setup
->
-> 1. Install Node version 10+, I have used Node version 12
-> 2. Install Angular Cli version 8 globaly `npm i -g @angular/cli`
-> 3. Use package manager of your choice; this project is using `yarn` as package manager; so you will find `yarn.lock` file to install exact dependencies as in original dev setup. To install yarn use `npm i -g yarn`
-> 4. Clone project via `git clone https://github.com/mumairofficial/fm-contact.git`
-> 5. CD into `fm-contacts` dir & install dependencies using `yarn install` or `npm install`
-> 6. Once all dependencies installed then simple run `ng serve` or `yarn start`
-> 7. Open chrome or firefox and enter `localhost:4200`
+### Project Setup
+
+1. Install Node version 10+, I have used Node version 12
+2. Install Angular Cli version 8 globaly `npm i -g @angular/cli`
+3. Use package manager of your choice; this project is using `yarn` as package manager; so you will find `yarn.lock` file to install exact dependencies as in original dev setup. To install yarn use `npm i -g yarn`
+4. Clone project via `git clone https://github.com/mumairofficial/fm-contact.git`
+5. CD into `fm-contacts` dir & install dependencies using `yarn install` or `npm install`
+6. Once all dependencies installed then simple run `ng serve` or `yarn start`
+7. Open chrome or firefox and enter `localhost:4200`
 
 ### Project Structure Overview
 
