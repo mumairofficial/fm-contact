@@ -3,6 +3,10 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { FavoriteContactsComponent } from "./favorite-contacts.component";
 
+/**
+ * Favorite contacts module routing for lazy loading
+ */
+
 const routes: Routes = [
   {
     path: "",

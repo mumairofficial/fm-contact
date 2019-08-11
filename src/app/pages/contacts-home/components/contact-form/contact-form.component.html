@@ -2,6 +2,8 @@
   <div class="text-2xl pt-6 mb-4">
     New Contact
   </div>
+
+  <!-- Full Name Input -->
   <div class="flex flex-col mb-6">
     <label class="pb-2 text-gray-600" for="fullName">
       Full Name (i.e. John Doe)
@@ -14,6 +16,7 @@
     />
   </div>
 
+  <!-- Email -->
   <div class="flex justify-between">
     <div class="flex flex-col flex-1 mr-2">
       <label class="pb-2 text-gray-600" for="email">
@@ -27,6 +30,7 @@
       />
     </div>
 
+    <!-- Phone -->
     <div class="flex flex-col flex-1 ml-2">
       <label class="pb-2 text-gray-600" for="phone">
         Phone
@@ -39,6 +43,7 @@
     </div>
   </div>
 
+  <!-- Submit Button -->
   <div class="mt-6 inline-flex">
     <button
       (click)="onSaveContact()"

@@ -4,10 +4,12 @@ import { LayoutComponent } from "./core/components";
 import { ContactsHomeComponent } from "./pages/contacts-home/contacts-home.component";
 
 const routes: Routes = [
+  { path: "**", redirectTo: "home" },
   {
     path: "",
     component: LayoutComponent,
     children: [
+      // eager load contact home component while application loading
       {
         path: "home",
         component: ContactsHomeComponent
@@ -17,9 +19,7 @@ const routes: Routes = [
       {
         path: "favorites",
         loadChildren: () =>
-          import("./pages/favorite-contacts/favorite-contacts.module").then(
-            m => m.FavoriteContactsModule
-          )
+          import("./pages/favorite-contacts/favorite-contacts.module").then(m => m.FavoriteContactsModule)
       }
     ]
   }

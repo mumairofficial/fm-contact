@@ -36,3 +36,11 @@ Application architecture is as follows:
 5. `app/app.component.spec.ts` contains the basic test
 6. `app/app.component.ts` contains the `router-outlet` to project component directly into view.
 7. `app/app.module.ts` contains the global imports of routing and other modules to make them provide in application injector tree.
+
+### Routing Techinique
+
+Both lazy and eager module resolution strategy is used to download only those bits which are mandatory to load application logic
+
+### Form Validation
+
+This application is using angular reactive form module; which provide very ease to initiate form and apply custom or predefined validation rules.
