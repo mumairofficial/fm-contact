@@ -1,27 +1,38 @@
-# FmContacts
+# Contacts Assignment Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
+Contacts appliction with functionality to create, and mark favorite contact.
 
-## Development server
+This application is generated using Angular CLI versino 8.2.1
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+> ## Project Setup
+>
+> 1. Install Node version 10+, I have used Node version 12
+> 2. Install Angular Cli version 8 globaly `npm i -g @angular/cli`
+> 3. Use package manager of your choice; this project is using `yarn` as package manager; so you will find `yarn.lock` file to install exact dependencies as in original dev setup. To install yarn use `npm i -g yarn`
+> 4. Clone project via `git clone https://github.com/mumairofficial/fm-contact.git`
+> 5. CD into `fm-contacts` dir & install dependencies using `yarn install` or `npm install`
+> 6. Once all dependencies installed then simple run `ng serve` or `yarn start`
+> 7. Open chrome or firefox and enter `localhost:4200`
 
-## Code scaffolding
+### Project Structure Overview
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This project is structured on top of angular style guidelines. There are 3 main directries to manage application logic.
+Application is using very simple and reactive state management logic using rxjs observables; with the help of that application state is perdictable and maintainable from single source of truth.
 
-## Build
+Application architecture is as follows:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1. `app/core/` contains the logic and applicaion layout available globally in application
+   - `components/` contains the application layout logic components such as look n feel `layout`, `left-navigation`, `topbar` and maintained their own module to easily add remove without jumping around appliction logic.
+   - `contact.service.ts` contains the `BehaviourSubject` to maintain the application state globally such as `Contacts` and helper methods.
+   - `core.module.ts` intended to provide application core dependencies.
+2. `app/pages/` contains the views of appliction such as route page contacts & favorite contacts
+   - `contact-home/` contain the page logic for listing all contacts and form to create new.
+   - `favorite-contacts/` page consist of listing of favorite contacts
+3. `app/shared/` contains the components, models which are resued in whole appliction.
+   - `components/` contains the resueable component of `contact-item` to use for home contact and favorite contacts item listing.
+   - `models/` contains the type defination of contact item to provide intellisense and type safetly wile coding.
+   - `shared.module.ts` registered the reuseable components and other common modules to provide into application other modules.
+4. `app/app-routing.module.ts` contains the global routing definations
+5. `app/app.component.spec.ts` contains the basic test
+6. `app/app.component.ts` contains the `router-outlet` to project component directly into view.
+7. `app/app.module.ts` contains the global imports of routing and other modules to make them provide in application injector tree.
