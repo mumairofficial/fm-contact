@@ -8,7 +8,7 @@ import { IContactItem } from "src/app/shared/models/contact-item.interface";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactFormComponent implements OnInit {
-  private colors = ["purple", "green", "pink", "orange", "yellow"];
+  private colors = ["purple", "green", "pink", "orange", "yellow", "indigo", "teal", "red", "gray"];
   public contactForm: FormGroup;
 
   @Output() save: EventEmitter<IContactItem> = new EventEmitter<IContactItem>();
