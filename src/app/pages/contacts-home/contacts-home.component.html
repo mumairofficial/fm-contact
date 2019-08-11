@@ -6,6 +6,5 @@
     <div *ngFor="let contact of contacts$ | async">
       <contact-item [contact]="contact" (onFavorite)="toggleFavorite($event)"></contact-item>
     </div>
-    <div *ngIf="contacts$.length === 0 | async">No Contact Found! Creat New</div>
   </div>
 </div>

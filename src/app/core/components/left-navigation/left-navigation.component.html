@@ -3,7 +3,7 @@
 
   <div class="mt-5 text-lg text-gray-600 font-semibold inline-flex flex-col">
     <a
-      *ngFor="let item of navItems; trackBy: item?.label"
+      *ngFor="let item of navItems"
       [routerLink]="[item.path]"
       routerLinkActive="text-purple-700"
       class="inline-flex items-center px-4 py-1 my-1 hover:bg-purple-100 hover:text-purple-700 rounded-full"
