@@ -4,6 +4,4 @@ import { Component } from "@angular/core";
   selector: "app-topbar",
   templateUrl: "topbar.component.html"
 })
-export class TopbarComponent {
-  title = "Contacts";
-}
+export class TopbarComponent {}
