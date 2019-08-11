@@ -1,6 +1,11 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from "@angular/core";
 import { IContactItem } from "../../models/contact-item.interface";
 
+/**
+ * Contact Item Re-Useable component
+ * takes contact item and render the list item
+ */
+
 @Component({
   selector: "contact-item",
   templateUrl: "contact-item.component.html",
