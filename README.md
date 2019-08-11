@@ -14,6 +14,10 @@ This application is generated using Angular CLI versino 8.2.1
 6. Once all dependencies installed then simple run `ng serve` or `yarn start`
 7. Open chrome or firefox and enter `localhost:4200`
 
+### Project Layout Design
+
+For project layout design I got inspirations from twitter new design and column layout. I used utility first css library called `tailwind.css` to style individual component and some custom css.
+
 ### Project Structure Overview
 
 This project is structured on top of angular style guidelines. There are 3 main directries to manage application logic.
@@ -50,3 +54,7 @@ This application is using angular reactive form module; which provide very ease 
 Karma test files are included with basic coverage to verify component declaraion rendering with proper dependencies and check if there any compilation error
 
 To run test command `yarn test` or `npm run test`
+
+### Preview
+
+![image](https://user-images.githubusercontent.com/6498132/62837890-4a556880-bc8e-11e9-8476-990a10ce4ede.png)
