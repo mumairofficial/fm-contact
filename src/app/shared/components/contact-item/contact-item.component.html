@@ -1,7 +1,7 @@
 <div class="flex justify-between items-center my-4">
   <div class="mr-2">
-    <div class="flex justify-around items-center rounded-full bg-green-200 text-green-700 text-lg w-10 h-10">
-      J
+    <div [ngClass]="contact.color" class="flex justify-around items-center rounded-full text-lg w-10 h-10">
+      {{ contact.fullName[0] }}
     </div>
   </div>
   <div class="flex-1 ml-2">

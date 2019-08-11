@@ -8,6 +8,7 @@ import { IContactItem } from "src/app/shared/models/contact-item.interface";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactFormComponent implements OnInit {
+  private colors = ["purple", "green", "pink", "orange", "yellow"];
   public contactForm: FormGroup;
 
   @Output() save: EventEmitter<IContactItem> = new EventEmitter<IContactItem>();
@@ -31,8 +32,14 @@ export class ContactFormComponent implements OnInit {
       alert("Invalid Form");
       return;
     }
-    const formValue: IContactItem = { ...this.contactForm.value, id: new Date().getTime() };
+    const formValue: IContactItem = { ...this.contactForm.value, id: new Date().getTime(), color: this.randomColor() };
     this.save.emit(formValue);
     this.contactForm.reset();
+  }
+
+  private randomColor(): string {
+    const randomConst = Math.floor(Math.random() * this.colors.length - 1);
+    const c = this.colors[randomConst];
+    return `bg-${c}-200 text-${c}-700`;
   }
 }
