@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
+
 import { IContactItem } from "src/app/shared/models/contact-item.interface";
 import { ContactService } from "src/app/core/contact.service";
 
@@ -7,11 +9,15 @@ import { ContactService } from "src/app/core/contact.service";
   templateUrl: "favorite-contacts.component.html"
 })
 export class FavoriteContactsComponent implements OnInit {
-  public favoriteContacts: Array<IContactItem> = [];
+  public contacts$: BehaviorSubject<Array<IContactItem>>;
 
   constructor(private contactService: ContactService) {}
 
   ngOnInit() {
-    this.favoriteContacts = this.contactService.contacts.filter(item => item.isFavorite);
+    this.contacts$ = this.contactService.contacts$;
+  }
+
+  toggleFavorite($event: IContactItem): void {
+    this.contactService.toggleFavorite($event);
   }
 }

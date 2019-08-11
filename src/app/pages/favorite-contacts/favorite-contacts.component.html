@@ -3,6 +3,8 @@
     <div class="text-lg mb-6 text-gray-700 tracking-wide">
       Favorite Contacts
     </div>
-    <contact-item *ngFor="let contact of favoriteContacts" [contact]="contact"></contact-item>
+    <div *ngFor="let contact of contacts$ | async">
+      <contact-item *ngIf="contact.isFavorite" [contact]="contact" (onFavorite)="toggleFavorite($event)"></contact-item>
+    </div>
   </div>
 </div>
