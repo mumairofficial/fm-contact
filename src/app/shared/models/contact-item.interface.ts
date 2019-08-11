@@ -4,4 +4,5 @@ export interface IContactItem {
   email: string;
   phone: string;
   isFavorite: boolean;
+  color?: string;
 }
