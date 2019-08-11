@@ -29,6 +29,7 @@ export class ContactFormComponent implements OnInit {
 
   onSaveContact(): void {
     if (this.contactForm.invalid) {
+      alert("Input full name and email address");
       return;
     }
     const formValue: IContactItem = { ...this.contactForm.value, id: new Date().getTime(), color: this.randomColor() };
