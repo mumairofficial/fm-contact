@@ -44,3 +44,9 @@ Both lazy and eager module resolution strategy is used to download only those bi
 ### Form Validation
 
 This application is using angular reactive form module; which provide very ease to initiate form and apply custom or predefined validation rules.
+
+### Karma Tests
+
+Karma test files are included with basic coverage to verify component declaraion rendering with proper dependencies and check if there any compilation error
+
+To run test command `yarn test` or `npm run test`
