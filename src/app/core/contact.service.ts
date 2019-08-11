@@ -12,6 +12,7 @@ export class ContactService {
       fullName: "John Doe",
       email: "john.doe@email.com",
       phone: "1234567890",
+      color: "bg-purple-200 text-purple-700",
       isFavorite: false
     },
     {
@@ -19,6 +20,7 @@ export class ContactService {
       fullName: "Jane Doe",
       email: "jane.doe@email.com",
       phone: "12345676543",
+      color: "bg-blue-200 text-blue-700",
       isFavorite: true
     },
     {
@@ -26,6 +28,7 @@ export class ContactService {
       fullName: "Jona Doe",
       email: "jona.doe@email.com",
       phone: "12345676543",
+      color: "bg-green-200 text-green-700",
       isFavorite: true
     }
   ];
