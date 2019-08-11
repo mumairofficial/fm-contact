@@ -29,7 +29,6 @@ export class ContactFormComponent implements OnInit {
 
   onSaveContact(): void {
     if (this.contactForm.invalid) {
-      alert("Invalid Form");
       return;
     }
     const formValue: IContactItem = { ...this.contactForm.value, id: new Date().getTime(), color: this.randomColor() };
@@ -41,5 +40,18 @@ export class ContactFormComponent implements OnInit {
     const randomConst = Math.floor(Math.random() * this.colors.length - 1);
     const c = this.colors[randomConst];
     return `bg-${c}-200 text-${c}-700`;
+  }
+
+  // helper form fields getters
+  get fullName() {
+    return this.contactForm.get("fullName");
+  }
+
+  get email() {
+    return this.contactForm.get("email");
+  }
+
+  get phone() {
+    return this.contactForm.get("phone");
   }
 }
