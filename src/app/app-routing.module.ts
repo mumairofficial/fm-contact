@@ -1,11 +1,27 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { LayoutComponent } from "./core/components";
+import { ContactsHomeComponent } from "./pages/contacts-home/contacts-home.component";
 
 const routes: Routes = [
   {
     path: "",
-    component: LayoutComponent
+    component: LayoutComponent,
+    children: [
+      {
+        path: "home",
+        component: ContactsHomeComponent
+      },
+
+      // lazy route to load chunk on demand rather including in main app chunk
+      {
+        path: "favorites",
+        loadChildren: () =>
+          import("./pages/favorite-contacts/favorite-contacts.module").then(
+            m => m.FavoriteContactsModule
+          )
+      }
+    ]
   }
 ];
 
