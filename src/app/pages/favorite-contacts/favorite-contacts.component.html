@@ -1,1 +1,8 @@
-favorite contacts component
+<div class="">
+  <div class="px-6 mt-6">
+    <div class="text-lg mb-6 text-gray-700 tracking-wide">
+      Favorite Contacts
+    </div>
+    <contact-item *ngFor="let contact of favoriteContacts" [contact]="contact"></contact-item>
+  </div>
+</div>
