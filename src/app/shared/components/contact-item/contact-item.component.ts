@@ -1,9 +1,10 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from "@angular/core";
 import { IContactItem } from "../../models/contact-item.interface";
 
 @Component({
   selector: "contact-item",
-  templateUrl: "contact-item.component.html"
+  templateUrl: "contact-item.component.html",
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactItemComponent {
   @Input() contact: IContactItem;
