@@ -1,1 +1,9 @@
-contact home
+<div class="">
+  <contact-form></contact-form>
+
+  <div class="px-6 mt-6">
+    <div class="text-lg mb-6 text-gray-700 tracking-wide">Contacts</div>
+    <contact-item *ngFor="let contact of contacts" [contact]="contact"></contact-item>
+    <div *ngIf="contacts.length === 0">No Contact Found! Creat New</div>
+  </div>
+</div>
