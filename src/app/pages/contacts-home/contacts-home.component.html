@@ -1,9 +1,11 @@
 <div class="">
-  <contact-form></contact-form>
+  <contact-form (save)="createContact($event)"></contact-form>
 
   <div class="px-6 mt-6">
     <div class="text-lg mb-6 text-gray-700 tracking-wide">Contacts</div>
-    <contact-item *ngFor="let contact of contacts" [contact]="contact"></contact-item>
-    <div *ngIf="contacts.length === 0">No Contact Found! Creat New</div>
+    <div *ngFor="let contact of contacts$ | async">
+      <contact-item [contact]="contact" (onFavorite)="toggleFavorite($event)"></contact-item>
+    </div>
+    <div *ngIf="contacts$.length === 0 | async">No Contact Found! Creat New</div>
   </div>
 </div>
