@@ -4,7 +4,6 @@ import { LayoutComponent } from "./core/components";
 import { ContactsHomeComponent } from "./pages/contacts-home/contacts-home.component";
 
 const routes: Routes = [
-  { path: "**", redirectTo: "home" },
   {
     path: "",
     component: LayoutComponent,
@@ -22,7 +21,10 @@ const routes: Routes = [
           import("./pages/favorite-contacts/favorite-contacts.module").then(m => m.FavoriteContactsModule)
       }
     ]
-  }
+  },
+
+  // check if path does not match with any of above the redirect to hom
+  { path: "**", redirectTo: "home" }
 ];
 
 @NgModule({
