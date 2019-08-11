@@ -1,0 +1,24 @@
+<div class="flex justify-between items-center my-4">
+  <div class="mr-2">
+    <div class="flex justify-around items-center rounded-full bg-green-200 text-green-700 text-lg w-10 h-10">
+      J
+    </div>
+  </div>
+  <div class="flex-1 ml-2">
+    <div class="text-gray-900 font-semibold">{{ contact.fullName }}</div>
+    <div class="text-gray-600">
+      <span>{{ contact.email }}</span>
+      <span *ngIf="contact.phone" class="px-2">·</span>
+      <span *ngIf="contact.phone">{{ contact.phone }}</span>
+    </div>
+  </div>
+  <div>
+    <button
+      (click)="onToggleFavorite()"
+      class="rounded-full w-10 h-10 flex items-center justify-around outline-none hover:text-purple-700 hover:bg-purple-100"
+    >
+      <i *ngIf="!contact.isFavorite" class="material-icons line-height-unset">favorite_border</i>
+      <i *ngIf="contact.isFavorite" class="material-icons line-height-unset">favorite</i>
+    </button>
+  </div>
+</div>
