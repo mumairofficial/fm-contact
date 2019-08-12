@@ -1,12 +1,12 @@
 import { TestBed, async } from "@angular/core/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 import { ContactFormComponent } from "./contact-form.component";
-import { SharedModule } from "src/app/shared";
+import { ReactiveFormsModule } from "@angular/forms";
 
 describe("ContactForm", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, SharedModule],
+      imports: [RouterTestingModule, ReactiveFormsModule],
       declarations: [ContactFormComponent]
     }).compileComponents();
   }));

@@ -6,7 +6,7 @@ import { ContactItemComponent } from "./contact-item.component";
 describe("ContactItem", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, SharedModule],
+      imports: [RouterTestingModule],
       declarations: [ContactItemComponent]
     }).compileComponents();
   }));
