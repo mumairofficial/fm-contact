@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ChangeDetectionStrategy } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter, ChangeDetectionStrategy, Input } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { IContactItem } from "src/app/shared/models/contact-item.interface";
 
@@ -11,6 +11,8 @@ export class ContactFormComponent implements OnInit {
   private colors = ["purple", "green", "pink", "orange", "yellow", "indigo", "teal", "red", "gray"];
   public contactForm: FormGroup;
 
+  @Input() formTitle: string = "New Contact";
+  @Input() buttonLabel: string = "Create Contact";
   @Output() save: EventEmitter<IContactItem> = new EventEmitter<IContactItem>();
 
   constructor(private fb: FormBuilder) {}
