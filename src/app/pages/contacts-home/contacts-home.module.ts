@@ -2,10 +2,9 @@ import { NgModule } from "@angular/core";
 
 import { ContactsHomeComponent } from "./contacts-home.component";
 import { SharedModule } from "src/app/shared";
-import { ContactFormComponent } from "./components";
 
 @NgModule({
-  declarations: [ContactsHomeComponent, ContactFormComponent],
+  declarations: [ContactsHomeComponent],
   exports: [ContactsHomeComponent],
   imports: [SharedModule]
 })
