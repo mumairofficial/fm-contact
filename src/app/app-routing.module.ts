@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       // eager load contact home component while application loading
       {
-        path: "home",
+        path: "",
         component: ContactsHomeComponent
       },
 
@@ -24,7 +24,7 @@ const routes: Routes = [
   },
 
   // check if path does not match with any of above the redirect to hom
-  { path: "**", redirectTo: "home" }
+  { path: "**", redirectTo: "/" }
 ];
 
 @NgModule({

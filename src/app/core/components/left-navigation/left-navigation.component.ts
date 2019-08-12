@@ -15,7 +15,7 @@ export class LeftNavigationComponent {
     {
       label: "Contacts",
       icon: "home",
-      path: "/home"
+      path: "/"
     },
     {
       label: "Favorites",
