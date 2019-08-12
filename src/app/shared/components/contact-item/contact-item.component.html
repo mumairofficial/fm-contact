@@ -1,11 +1,15 @@
 <div class="flex justify-between items-center my-4">
   <div class="mr-2">
-    <div [ngClass]="contact.color" class="flex justify-around items-center rounded-full text-lg w-10 h-10">
+    <a
+      [ngClass]="contact.color"
+      [routerLink]="['/contacts', contact.id]"
+      class="flex justify-around items-center rounded-full text-lg w-10 h-10"
+    >
       {{ contact.fullName[0] }}
-    </div>
+    </a>
   </div>
   <div class="flex-1 ml-2">
-    <div class="text-gray-900 font-semibold">{{ contact.fullName }}</div>
+    <a [routerLink]="['/contacts', contact.id]" class="text-gray-900 font-semibold">{{ contact.fullName }}</a>
     <div class="text-gray-600">
       <span>{{ contact.email }}</span>
       <span *ngIf="contact.phone" class="px-2">·</span>
