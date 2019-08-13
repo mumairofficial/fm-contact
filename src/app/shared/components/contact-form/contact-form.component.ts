@@ -12,7 +12,9 @@ export class ContactFormComponent implements OnInit {
   public contactForm: FormGroup;
 
   @Input() formTitle: string = "New Contact";
-  @Input() buttonLabel: string = "Create Contact";
+  @Input() update = false;
+  @Input() contact: IContactItem;
+
   @Output() save: EventEmitter<IContactItem> = new EventEmitter<IContactItem>();
 
   constructor(private fb: FormBuilder) {}
@@ -27,6 +29,10 @@ export class ContactFormComponent implements OnInit {
       email: ["", Validators.compose([Validators.required, Validators.email])],
       phone: [""]
     });
+
+    if (this.update) {
+      this.contactForm.patchValue({ ...this.contact });
+    }
   }
 
   onSaveContact(): void {
@@ -37,6 +43,16 @@ export class ContactFormComponent implements OnInit {
     const formValue: IContactItem = { ...this.contactForm.value, id: new Date().getTime(), color: this.randomColor() };
     this.save.emit(formValue);
     this.contactForm.reset();
+  }
+
+  onUpdateContact(): void {
+    if (this.contactForm.invalid) {
+      alert("Input full name and email address");
+      return;
+    }
+
+    const formValue = { ...this.contact, ...this.contactForm.value };
+    this.save.emit(formValue);
   }
 
   private randomColor(): string {
