@@ -52,4 +52,24 @@ export class ContactService {
 
     this.contacts$.next([...mutatedContactsList]);
   }
+
+  getContact(contactId: number): IContactItem {
+    const availableContacts = this.contacts$.getValue();
+    return availableContacts.filter(contact => contact.id === contactId)[0];
+  }
+
+  updateContact(contactToUpdate: IContactItem): void {
+    const availableContacts = this.contacts$.getValue();
+    const updated = availableContacts.map(contact => {
+      if (contact.id === contactToUpdate.id) {
+        contact.fullName = contactToUpdate.fullName;
+        contact.email = contactToUpdate.email;
+        contact.phone = contactToUpdate.phone;
+      }
+
+      return contact;
+    });
+
+    this.contacts$.next([...updated]);
+  }
 }
