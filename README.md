@@ -32,6 +32,7 @@ Application architecture is as follows:
 2. `app/pages/` contains the views of appliction such as route page contacts & favorite contacts
    - `contact-home/` contain the page logic for listing all contacts and form to create new.
    - `favorite-contacts/` page consist of listing of favorite contacts
+   - `contact-detail/` page consist logic of showing contact detail in editable form with update facility
 3. `app/shared/` contains the components, models which are resued in whole appliction.
    - `components/` contains the resueable component of `contact-item` to use for home contact and favorite contacts item listing.
    - `models/` contains the type defination of contact item to provide intellisense and type safetly wile coding.
