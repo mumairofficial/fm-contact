@@ -67,4 +67,4 @@ There can alot for improvements can make such as:
 
 ### Preview
 
-![image](https://user-images.githubusercontent.com/6498132/62837890-4a556880-bc8e-11e9-8476-990a10ce4ede.png)
+![image](https://user-images.githubusercontent.com/6498132/62918808-39a21100-bdba-11e9-96b8-43544f2b870f.png)
