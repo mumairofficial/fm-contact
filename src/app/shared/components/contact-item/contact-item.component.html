@@ -16,7 +16,10 @@
       <span *ngIf="contact.phone">{{ contact.phone }}</span>
     </div>
   </div>
-  <div>
+  <div class="flex">
+    <a [routerLink]="['/contacts', contact.id]" class="mr-2 text-gray-400 hover:text-gray-900">
+      <i class="material-icons line-height-unset">edit</i>
+    </a>
     <button
       (click)="onToggleFavorite()"
       class="rounded-full w-10 h-10 flex items-center justify-around outline-none hover:text-purple-700 hover:bg-purple-100"
