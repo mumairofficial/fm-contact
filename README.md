@@ -56,6 +56,15 @@ Karma test files are included with basic coverage to verify component declaraion
 
 To run test command `yarn test` or `npm run test`
 
+### Pending Improvements
+
+There can alot for improvements can make such as:
+
+- If contact is not available then show 404 or redirect home page
+- Show pop up modal for details or update operations
+- Better state management
+- More test coverage
+
 ### Preview
 
 ![image](https://user-images.githubusercontent.com/6498132/62837890-4a556880-bc8e-11e9-8476-990a10ce4ede.png)
