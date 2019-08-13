@@ -1,1 +1,8 @@
-contact detail page
+<div class="">
+  <contact-form
+    formTitle="Update Contact"
+    update="'true'"
+    [contact]="contact"
+    (save)="updateContact($event)"
+  ></contact-form>
+</div>
