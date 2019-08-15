@@ -5,3 +5,9 @@
 .app-container__content {
   width: 100%;
 }
+
+@media(max-width: 640px) {
+  .app-container {
+    width: 100%;
+  }
+}

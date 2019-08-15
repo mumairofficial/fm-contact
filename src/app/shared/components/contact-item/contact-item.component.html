@@ -1,4 +1,5 @@
 <div class="flex justify-between items-center my-4">
+  <!-- avatar -->
   <div class="mr-2">
     <a
       [ngClass]="contact.color"
@@ -8,6 +9,8 @@
       {{ contact.fullName[0] }}
     </a>
   </div>
+
+  <!-- person info -->
   <div class="flex-1 ml-2">
     <a [routerLink]="['/contacts', contact.id]" class="text-gray-900 font-semibold">{{ contact.fullName }}</a>
     <div class="text-gray-600">
@@ -16,6 +19,8 @@
       <span *ngIf="contact.phone">{{ contact.phone }}</span>
     </div>
   </div>
+
+  <!-- action buttons -->
   <div class="flex">
     <a [routerLink]="['/contacts', contact.id]" class="mr-2 text-gray-400 hover:text-gray-900">
       <i class="material-icons line-height-unset">edit</i>
