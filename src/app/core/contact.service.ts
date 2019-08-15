@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
 import { IContactItem } from "../shared/models/contact-item.interface";
 import { BehaviorSubject } from "rxjs";
-import { Storage } from '../shared/lib/storage.wrapper';
+import { Storage } from "../shared/lib/storage.wrapper";
 
 const storageKey = {
-  CONTACTS: 'contacts'
-}
+  CONTACTS: "contacts"
+};
 
 @Injectable({
   providedIn: "root"
@@ -21,11 +21,11 @@ export class ContactService {
   saveContact(contact: IContactItem) {
     const availableContacts = this.contacts$.getValue();
     let contactsToSave = [contact];
-    
+
     if (availableContacts !== null) {
       contactsToSave = [contact, ...availableContacts];
     }
-    
+
     this.storage.save(storageKey.CONTACTS, contactsToSave);
     this.contacts$.next(contactsToSave);
   }

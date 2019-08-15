@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, ChangeDetectionStrategy, Input } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { IContactItem } from "src/app/shared/models/contact-item.interface";
-import { CustomValidators } from '../../validators';
+import { CustomValidators } from "../../validators";
 
 @Component({
   selector: "contact-form",
@@ -28,10 +28,7 @@ export class ContactFormComponent implements OnInit {
     this.contactForm = this.fb.group({
       fullName: ["", Validators.compose([Validators.required, CustomValidators.noWhiteSpace])],
       email: ["", Validators.compose([Validators.required, Validators.email, CustomValidators.noWhiteSpace])],
-      phone: ["", Validators.compose([
-        CustomValidators.noWhiteSpace,
-        CustomValidators.phone
-      ])]
+      phone: ["", Validators.compose([CustomValidators.noWhiteSpace, CustomValidators.phone])]
     });
 
     if (this.update) {
@@ -52,12 +49,12 @@ export class ContactFormComponent implements OnInit {
   }
 
   private cleanAndTrimFormValues(): any {
-    const formValuesCopy = {...this.contactForm.value};
-    const postProcessing: IContactItem = {}; 
-    
+    const formValuesCopy = { ...this.contactForm.value };
+    const postProcessing: IContactItem = {};
+
     Object.keys(formValuesCopy).forEach(key => {
       postProcessing[key] = formValuesCopy[key].toString().trim();
-    })
+    });
 
     return postProcessing;
   }

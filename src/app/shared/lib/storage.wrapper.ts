@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { IContactItem } from '../models/contact-item.interface';
+import { Injectable } from "@angular/core";
+import { IContactItem } from "../models/contact-item.interface";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class Storage {
   public save(key: string, value: object): void {
