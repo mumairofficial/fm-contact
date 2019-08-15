@@ -1,43 +1,33 @@
 import { Injectable } from "@angular/core";
 import { IContactItem } from "../shared/models/contact-item.interface";
 import { BehaviorSubject } from "rxjs";
+import { Storage } from '../shared/lib/storage.wrapper';
+
+const storageKey = {
+  CONTACTS: 'contacts'
+}
 
 @Injectable({
   providedIn: "root"
 })
 export class ContactService {
-  private initialContacts: Array<IContactItem> = [
-    {
-      id: 1,
-      fullName: "John Doe",
-      email: "john.doe@email.com",
-      phone: "1234567890",
-      color: "bg-purple-200 text-purple-700",
-      isFavorite: false
-    },
-    {
-      id: 2,
-      fullName: "Jane Doe",
-      email: "jane.doe@email.com",
-      phone: "12345676543",
-      color: "bg-blue-200 text-blue-700",
-      isFavorite: true
-    },
-    {
-      id: 3,
-      fullName: "Jona Doe",
-      email: "jona.doe@email.com",
-      phone: "12345676543",
-      color: "bg-green-200 text-green-700",
-      isFavorite: true
-    }
-  ];
+  public contacts$: BehaviorSubject<IContactItem[]> = new BehaviorSubject<IContactItem[]>(null);
 
-  public contacts$: BehaviorSubject<IContactItem[]> = new BehaviorSubject<IContactItem[]>(this.initialContacts);
+  constructor(private storage: Storage) {
+    const storageContacts: Array<IContactItem> = this.storage.get(storageKey.CONTACTS);
+    this.contacts$.next(storageContacts);
+  }
 
   saveContact(contact: IContactItem) {
     const availableContacts = this.contacts$.getValue();
-    this.contacts$.next([contact, ...availableContacts]);
+    let contactsToSave = [contact];
+    
+    if (availableContacts !== null) {
+      contactsToSave = [contact, ...availableContacts];
+    }
+    
+    this.storage.save(storageKey.CONTACTS, contactsToSave);
+    this.contacts$.next(contactsToSave);
   }
 
   toggleFavorite(targetContact: IContactItem) {
@@ -50,6 +40,7 @@ export class ContactService {
       return contact;
     });
 
+    this.storage.save(storageKey.CONTACTS, mutatedContactsList);
     this.contacts$.next([...mutatedContactsList]);
   }
 
@@ -70,6 +61,7 @@ export class ContactService {
       return contact;
     });
 
+    this.storage.save(storageKey.CONTACTS, updated);
     this.contacts$.next([...updated]);
   }
 }
