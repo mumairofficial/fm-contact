@@ -56,7 +56,7 @@ export class ContactFormComponent implements OnInit {
   }
 
   private randomColor(): string {
-    const randomConst = Math.floor(Math.random() * this.colors.length - 1);
+    const randomConst = Math.abs(Math.floor(Math.random() * this.colors.length));
     const c = this.colors[randomConst];
     return `bg-${c}-200 text-${c}-700`;
   }
