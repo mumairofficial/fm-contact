@@ -10,8 +10,10 @@ export class CustomValidators {
   public static phone(control: FormControl) {
     // https://stackoverflow.com/questions/123559/a-comprehensive-regex-for-phone-number-validation
     const phoneNumber = (control.value || "").trim();
+
+    // tslint:disable-next-line:max-line-length
     const regex = /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i;
-    const isValid = regex.test(phoneNumber)
+    const isValid = regex.test(phoneNumber);
     return isValid ? null : { phone: true };
   }
 }
