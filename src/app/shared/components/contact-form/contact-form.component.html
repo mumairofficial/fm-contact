@@ -15,8 +15,7 @@
       formControlName="fullName"
     />
     <small *ngIf="fullName.touched" class="text-red-700 tracking-wide">
-      <p *ngIf="fullName.getError('required')">Full name is required</p>
-      <p *ngIf="fullName.getError('whitespace')">Full name is required</p>
+      <p *ngIf="fullName.getError('required') || fullName.getError('whitespace')">Enter valid full name</p>
     </small>
   </div>
 
@@ -34,8 +33,7 @@
       />
       <small *ngIf="email.touched" class="text-red-700 tracking-wide">
         <p *ngIf="email.getError('required')">Email is required</p>
-        <p *ngIf="email.getError('email')">Input valid email</p>
-        <p *ngIf="email.getError('whitespace')">Input valid email</p>
+        <p *ngIf="email.getError('email') || email.getError('whitespace')">Input valid email</p>
       </small>
     </div>
 
@@ -50,8 +48,7 @@
         formControlName="phone"
       />
       <small *ngIf="phone.touched" class="text-red-700 tracking-wide">
-        <p *ngIf="phone.getError('whitespace')">Input valid phone number</p>
-        <p *ngIf="phone.getError('phone')">Input valid phone number</p>
+        <p *ngIf="phone.getError('whitespace') || phone.getError('phone')">Input valid phone number</p>
       </small>
     </div>
   </div>
