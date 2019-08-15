@@ -5,7 +5,7 @@
     </div>
     <div *ngFor="let contact of contacts$ | async">
       <!-- iterate over the contacts if favorite is true -->
-      <contact-item *ngIf="contact.isFavorite" [contact]="contact" (onFavorite)="toggleFavorite($event)">
+      <contact-item *ngIf="contact.isFavorite" [contact]="contact" (favorite)="toggleFavorite($event)">
       </contact-item>
     </div>
   </div>

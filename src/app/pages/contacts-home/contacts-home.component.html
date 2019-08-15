@@ -4,7 +4,7 @@
   <div class="px-6 mt-6">
     <div class="text-lg mb-6 text-gray-700 tracking-wide">Contacts</div>
     <div *ngFor="let contact of contacts$ | async">
-      <contact-item [contact]="contact" (onFavorite)="toggleFavorite($event)"></contact-item>
+      <contact-item [contact]="contact" (favorite)="toggleFavorite($event)"></contact-item>
     </div>
   </div>
 </div>

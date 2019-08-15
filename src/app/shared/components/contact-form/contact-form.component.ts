@@ -11,7 +11,7 @@ export class ContactFormComponent implements OnInit {
   private colors = ["purple", "green", "pink", "orange", "yellow", "indigo", "teal", "red", "gray"];
   public contactForm: FormGroup;
 
-  @Input() formTitle: string = "New Contact";
+  @Input() formTitle = "New Contact";
   @Input() update = false;
   @Input() contact: IContactItem;
 

@@ -13,10 +13,10 @@ import { IContactItem } from "../../models/contact-item.interface";
 })
 export class ContactItemComponent {
   @Input() contact: IContactItem;
-  @Output() onFavorite: EventEmitter<IContactItem> = new EventEmitter<IContactItem>();
+  @Output() favorite: EventEmitter<IContactItem> = new EventEmitter<IContactItem>();
 
   public onToggleFavorite(): void {
-    this.onFavorite.emit({
+    this.favorite.emit({
       ...this.contact,
       isFavorite: !this.contact.isFavorite
     });
